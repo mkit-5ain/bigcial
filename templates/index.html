@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118985950-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-118985950-1');
+      var browser = function() {
+          // Return cached result if avalible, else get result then cache it.
+          if (browser.prototype._cachedResult)
+              return browser.prototype._cachedResult;
+          // Opera 8.0+
+          var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+          // Firefox 1.0+
+          var isFirefox = typeof InstallTrigger !== 'undefined';
+          // Safari 3.0+ "[object HTMLElementConstructor]"
+          var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+          // Internet Explorer 6-11
+          var isIE = /*@cc_on!@*/false || !!document.documentMode;
+          // Edge 20+
+          var isEdge = !isIE && !!window.StyleMedia;
+          // Chrome 1+
+          var isChrome = !!window.chrome && !!window.chrome.webstore;
+          // Blink engine detection
+          var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+          return browser.prototype._cachedResult =
+              isOpera ? 'Opera' :
+              isFirefox ? 'Firefox' :
+              isSafari ? 'Safari' :
+              isChrome ? 'Chrome' :
+              isIE ? 'IE' :
+              isEdge ? 'Edge' :
+              isBlink ? 'Blink' :
+              "Don't know";
+      };
+      console.log(browser());
+      if (browser() !== 'Chrome') {
+        alert("BIGCIAL: 현재 브라우저에서는 서비스가 제공되지 않습니다.\n\n 크롬 브라우저를 사용해주시기 바랍니다.");
+      }
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PJR9NTN');</script>
+    <!-- End Google Tag Manager -->
+    <title>Bigcial</title>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJR9NTN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
